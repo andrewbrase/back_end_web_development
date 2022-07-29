@@ -43,3 +43,7 @@ example of a MongoDB Document - BSON types
 
 - get MongoDB Atlas
 - need a place to store data cluster
+
+install node js 
+to verify use: node --version
+type in terminal: PS C:\Users\brasea\Desktop\Workspace\MERN_stack_dev> npx create-react-app MERN-exercise-tracker
