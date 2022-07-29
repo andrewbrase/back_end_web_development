@@ -47,3 +47,107 @@ example of a MongoDB Document - BSON types
 install node js 
 to verify use: node --version
 type in terminal: PS C:\Users\brasea\Desktop\Workspace\MERN_stack_dev> npx create-react-app MERN-exercise-tracker
+
+We suggest that you begin by typing:
+
+  cd mern-exercise-tracker
+  npm start
+
+  npm notice
+    npm notice New minor version of npm available! 8.11.0 -> 8.15.1
+    npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.15.1
+    npm notice Run npm install -g npm@8.15.1 to update!
+    npm notice
+
+after finished :
+cd .\mern-exercise-tracker\
+
+- could start it up but we are going to create the backend and then creating the front end React
+- inside the exercise tracker folder - create backend folder
+mkdir backend
+cd to backend folder
+- create a package.json file 
+npm init -y
+
+- created this -
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+- install a few packages 
+*express - lightweight and fast web framework for node.js
+*cors - cross origin resource sharing - so that we can easily access
+something outside of our server from our server
+*mongoose - interacting with mongoDB through node.js simpler
+*dotenv - loads environment variables from a dotenv file to proccessenv -
+this makes development simpler, so instead of setting environment variables
+on our development machine - they can be stored in a file 
+
+npm install express
+npm install express cors mongoose dotenv
+
+- install one final package globally
+*nodemon - makes development easier - helps develope node.js applications 
+by automatically restarting the node appliocation when changes in the file
+dir are detected
+
+npm install -g nodemon
+
+- time to create our server 
+inside backend folder create a file server.js
+- fill out server.js with required packages etc.
+
+type in terminal: nodemon server
+
+- this is the point to where you can connect your mongoDB atlas database 
+add this to the server.js file in backend
+
+// require packages that were installed
+const express = require('express');
+const cors = require('cors');
+
+// mongoose will help us connect to our mongoDB database
+const mongoose = require('mongoose')
+
+require('dotenv').config();
+
+// how we create our express server
+const app = express();
+const port = process.env.PORT || 5000;
+
+// middleware - allow us to parse json
+app.use(cors());
+app.use(express.json())
+// 
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
+);
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log("MongoDB database connection established successfully");
+})
+
+// this starts the server
+app.listen(port, () => {
+    console.log('Server is running on port: ' + port);
+});
+
+should say - [nodemon] app crashed - waiting for file changes before starting...
+because we do not have the environmental variable yet
+
+go into backend folder and create a new file called .env
+get the connection string from mongoDB 
+mongodb+srv://brasea:<password>@cluster0.0mlbgas.mongodb.net/?retryWrites=true&w=majority
+
+inside of .env file assign
+ATLAS_URI = mongodb+srv://brasea:<password>@cluster0.0mlbgas.mongodb.net/?retryWrites=true&w=majority
+type in password in <password> field
