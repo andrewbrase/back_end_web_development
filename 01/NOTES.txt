@@ -151,3 +151,120 @@ mongodb+srv://brasea:<password>@cluster0.0mlbgas.mongodb.net/?retryWrites=true&w
 inside of .env file assign
 ATLAS_URI = mongodb+srv://brasea:<password>@cluster0.0mlbgas.mongodb.net/?retryWrites=true&w=majority
 type in password in <password> field
+
+nodemon server to start server
+
+-->
+Compiled successfully!
+
+You can now view mern-exercise-tracker in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.140.2.2:3000
+
+Note that the development build is not optimized.     
+To create a production build, use npm run build.      
+
+webpack compiled successfully
+
+- now connected to database, need to be able to put things into 
+the database and read from the database
+-create our database schema using mongoose
+will include 2 things -
+exercise and users
+
+- inside backend folder create new dir models
+- inside models folder create 2 new files
+
+-exercise.model.js 
+-user.model.js GOING INTO USER.MODEL.JS --->
+--->
+--->
+--->
+// require mongoose
+const mongoose = require('mongoose');
+
+// new mongoose schema
+const Schema = mongoose.Schema;
+
+// a sing field username with some validations 
+const userSchema = new Schema({
+    username: {
+        // type is a string required
+        type: String,
+        required: true,
+        // require it's unique
+        unique: true,
+        // trim whitespace off the end
+        trim: true,
+        // minimum length of 3
+        minlength: 3
+    },
+}, {
+    // create fields for when it was created and modified
+    timestamps: true,
+});
+
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+INSIDE OF EXERCISE.MODEL.JS-->
+// require mongoose
+const mongoose = require('mongoose');
+
+// new mongoose schema
+const Schema = mongoose.Schema;
+
+const exerciseSchema = new Schema({
+    username: { type: String, required: true},
+    description: { type: String, required: true},
+    duration: {type: Number, required: true},
+    date: { type: Date, required: true},
+}, {
+    timestamps: true,
+});
+
+// add the API endpoint routes so that the server can be used to perform
+//  the CRUD operations - CREATE, READ, UPDATE, DELETE
+
+const Exercise = mongoose.model('Exercise', exerciseSchema);
+
+module.exports = Exercise;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// add the API endpoint routes so that the server can be used to perform
+//  the CRUD operations - CREATE, READ, UPDATE, DELETE
+
+inside the backend folder create a folder called routes
+inside route folder -> create a folder named exercises.js
+AND a file named users.js
+
+- tell the server to use the files that we just created 
+-> go to server.js file reight before the app.listen(port, () => {
+--->
+--->
+--->
+
+// we have to require these files and use the files in routes
+const exerciseRouter = require('./routes/exercises');
+const usersRouter = require('./routes/users')
+
+// whenever someone goes to the root URL and /exercises is at the end
+// its going to load (app.use) everything in the exercises router
+// same for the users router
+app.use('/exercises', exerciseRouter);
+app.use('/users', usersRouter);
+
+(BOTTOM OF SERVER.JS FILE)
+(// this starts the server
+app.listen(port, () => {
+    console.log('Server is running on port: ' + port);
+});)
+(BOTTOM OF SERVER.JS FILE)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+go to users.js in routes folder
