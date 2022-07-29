@@ -2,10 +2,44 @@ MERN stack
 
 the MERN stack consists of the following technologies
 
-MongoDB: A document-based open source database
-Express: A web application framework for Node.js
-React: A Javascript front-end library for building user interfaces
-Node.js: Javascript run-time environment that executes JavaScript 
-code outside of a browser (such as a server)
+- MongoDB: A document-based open source DATABASE
+- Express: A web application framework for Node.js - easily create a WEB SERVER
+- React: A Javascript front-end library for building USER INTERFACES
+- Node.js: Javascript RUN-TIME ENVIRONMENT that executes JavaScript 
+code OUTSIDE OF BROWSER (such as a SERVER)
 
 and Mongoose:Simple schema-based solution to model application data
+- makes it easier to use MongoDB and node.js
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Database concepts terms
+
+Tabular (relational) | MongoDB
+_____________________|_________
+Database             | Database
+Table                | Collection
+Row                  | Document
+Index                | Index 
+Join                 | $lookup
+Foreign Key          | Reference
+
+example of a MongoDB Document - BSON types
+
+{
+    name : "Andrew Brase",     (string)
+    title : "configuration tech",
+    address : {
+                        address 1 : "123 Main Street"     (nested document)
+                        city : "Edwardsville"
+                        state : "IL"
+                        postal_code : "62025"
+              },
+    topics : ["mongoDB","Python","Javascript","AI"],     (array)
+    employee_number : 1234     (int)
+    location : [44.123123 , 123.123123]     (Geo-spacial coords)
+}
+
+- looks a lot like JSON
+
+- get MongoDB Atlas
+- need a place to store data cluster
