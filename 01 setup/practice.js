@@ -20,3 +20,5 @@ CONST is a variable that cannot change / should not change
 
 var a; //declaring a variable to be called a
 var b = 2; // - declaring and assigning b to = (assign) 2
+
+// 13:00 - https://www.youtube.com/watch?v=PkZNo7MFNFg
