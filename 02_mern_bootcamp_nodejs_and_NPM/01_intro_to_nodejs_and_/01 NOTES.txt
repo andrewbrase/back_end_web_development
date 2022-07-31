@@ -15,6 +15,47 @@ Don't use with
 
 NPM: a huge library of open-source packages available for everyone to use
 we will use node to create a web server
-
-(1-node-farm is to practice with node)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+to start
+
+> node
+
+can use JS within runtime
+ const name = 'andrew'
+> name
+'andrew'
+
+to exit
+> .exit
+(ctrl D)
+
+to clear terminal
+(ctrl L)
+
+to see all of the global variables and node modules
+(tab)
+
+use of _
+> 3*8
+24
+> _+6
+30
+>
+(can be used to add whatever the last output was to a new action)
+
+to see all of the methods and propertie with tab 
+String.(tab) 
+
+> String.
+String.__proto__             String.hasOwnProperty
+String.isPrototypeOf         String.propertyIsEnumerable
+String.toLocaleString        String.valueOf
+
+String.apply                 String.arguments
+String.bind                  String.call
+String.caller                String.constructor
+String.toString
+
+String.fromCharCode          String.fromCodePoint
+String.length                String.name
+String.prototype             String.raw
