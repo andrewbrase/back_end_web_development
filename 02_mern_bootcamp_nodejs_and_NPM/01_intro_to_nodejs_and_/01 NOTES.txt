@@ -2,3 +2,12 @@ Node.js is a javascript runtime built on googles open-source V8 JS engine
 can be used to execute JS code outside of a web browser
 perfect conditions for using node.js as a web server
 we can use JS on the server-side of web development
+
+Reasons to use node.js 
+- API with database behind it (preferably NoSQL)
+- data streaming
+- real time chat application
+- server-side web application
+
+Don't use with
+- applications with heavy server-side processing (CPU-intensive)
