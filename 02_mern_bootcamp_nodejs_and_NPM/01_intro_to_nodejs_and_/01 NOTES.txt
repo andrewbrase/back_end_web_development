@@ -1,0 +1,2 @@
+Node.js is a javascript runtime built on googles open-source V8 JS engine
+can be used to execute JS code outside of a web browser
