@@ -174,7 +174,6 @@ this callback function gets access to important variables - the request variable
 // implementing different actions for URL
 // express can be used as a tool to help with routing , 
 // while learning node, we will use a built in node module called URL
-console.log('nodemon test')
 const http = require('http');
 
 /*the url module can be used when urls include things 
@@ -187,10 +186,21 @@ const url = require('url');
 const server = http.createServer((req, res) => {
     const pathName = req.url;
     // based on that path name, different routes will be taken
-    if(pathName === '/' || pathName === '/overview'){
+    if(pathName === '/' || pathName === '/over'){
         res.end('This is the overview page!');
-    } else if (pathName === '/product'){
+    } else if (pathName === '/prod'){
         res.end('this is the product page!');
+    } else{
+        res.writeHead(404, {
+            // a piece of information about the response that we are sending back 
+            // the browser will expect html
+            // the headers and status code need to be set before
+            // - we send out the response content after
+            'Content-type': 'text/html',
+            'my-own-header': 'hello'
+        });
+        // ---> Failed to load resource: the server responded with a status of 404 (Not Found)
+        res.end('<h1>Sorry, page not found!</h1>');
     }
 });
 
