@@ -157,11 +157,31 @@ this callback function gets access to important variables - the request variable
 // run the node application 
 // http:127.0.0.1:8000
 
+// const http = require('http');
+
+// const server = http.createServer((req, res) => {
+//     res.end('Hello from the server!');
+// });
+// server.listen(8000,'127.0.0.1', () => {
+//     console.log('listening to requests on port 8000');
+// }); 
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+// ROUTING 
+// implementing different actions for URL
+// express can be used as a tool to help with routing , we will use a built in node module called URL
+
 const http = require('http');
+const url = require('url');
 
 const server = http.createServer((req, res) => {
+    console.log(req.url);
     res.end('Hello from the server!');
 });
 server.listen(8000,'127.0.0.1', () => {
     console.log('listening to requests on port 8000');
 }); 
+
+// http://127.0.0.1:8000/overview
+// console.log(req.url);
+// ---> /overview
