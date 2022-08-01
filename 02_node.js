@@ -174,6 +174,7 @@ this callback function gets access to important variables - the request variable
 // implementing different actions for URL
 // express can be used as a tool to help with routing , 
 // while learning node, we will use a built in node module called URL
+console.log('nodemon test')
 const http = require('http');
 
 /*the url module can be used when urls include things 
@@ -194,7 +195,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(8000,'127.0.0.1', () => {
-    console.log('test')
     console.log('listening to requests on port 8000');
 }); 
 
