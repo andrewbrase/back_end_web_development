@@ -43,7 +43,7 @@ use of _
 >
 (can be used to add whatever the last output was to a new action)
 
-to see all of the methods and propertie with tab 
+to see all of the methods and property with tab 
 String.(tab) 
 
 > String.
