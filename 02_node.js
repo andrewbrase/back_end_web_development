@@ -39,4 +39,18 @@ an operation can only be executed after the statement above is executed
 the solution to this is to use asynchronous, non-blocking code
 in asynchronous code we offload the code to be worked on in the
 background, once that is done a callback function that we register before
-is called to handle the result */
+is called to handle the result. Durring that time all of the code 
+can still be executing without being blocked by the heavy task 
+-which is now running in the background
+
+const fs = require('fs');
+
+(non-blocking code execution) 
+fs.readFile('02_txt_example.txt', 'utf-8', (err,data) => {
+    console.log(data);
+});
+console.log('reading file...');
+
+the reason why callbacks are used so often in node.js
+a node.js process (where the application is running) - there is
+only one single thread */
