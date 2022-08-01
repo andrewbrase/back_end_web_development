@@ -83,43 +83,43 @@ Reading and writing files in a non-blocking Asynchronous way*/
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 // (this is not the recommended use of callbacks, this is just to learn read and write file)
 
-const fs = require('fs');
-// data 1 is within the 02 async file and it is : "02_txt_example"
-fs.readFile('02_async.txt', 'utf-8', (err,data1) => {
-    if (err) return console.log('There has been an error');
+// const fs = require('fs');
+// // data 1 is within the 02 async file and it is : "02_txt_example"
+// fs.readFile('02_async.txt', 'utf-8', (err,data1) => {
+//     if (err) return console.log('There has been an error');
 
-    // fs will open the file name from data1
-    fs.readFile(`${data1}.txt`, 'utf-8', (err,data2) => {
-        if (err) return console.log('There has been an error');
+//     // fs will open the file name from data1
+//     fs.readFile(`${data1}.txt`, 'utf-8', (err,data2) => {
+//         if (err) return console.log('There has been an error');
 
-        // console.log the data within 02_txt_example.txt
-        // console.log(data2);
-        // --->This is text from the 02_txt file
+//         // console.log the data within 02_txt_example.txt
+//         // console.log(data2);
+//         // --->This is text from the 02_txt file
 
-        fs.readFile('02_append.txt','utf-8',(err,data3) => {
-            if (err) return console.log('There has been an error');
+//         fs.readFile('02_append.txt','utf-8',(err,data3) => {
+//             if (err) return console.log('There has been an error');
 
-            // console.log(data3)
-            // ---> append this!
+//             // console.log(data3)
+//             // ---> append this!
 
-            /* the only argument we need is the error because there 
-            is no data that needs to be read, they are already in use
-            first arg is the path, second is what you want to write to the file, 
-            third is encoding and fourth is the error */
+//             /* the only argument we need is the error because there 
+//             is no data that needs to be read, they are already in use
+//             first arg is the path, second is what you want to write to the file, 
+//             third is encoding and fourth is the error */
 
-            fs.writeFile('02_final_append.txt', `${data2}`+ ' ' + `${data3}` ,'utf-8', err => {
-                fs.readFile('02_final_append.txt','utf-8',(err,data4) => {
-                    if (err) return console.log('There has been an error');
-                    console.log(data4);
-                    // ---> This is text from the 02_txt file (append this!)
+//             fs.writeFile('02_final_append.txt', `${data2}`+ ' ' + `${data3}` ,'utf-8', err => {
+//                 fs.readFile('02_final_append.txt','utf-8',(err,data4) => {
+//                     if (err) return console.log('There has been an error');
+//                     console.log(data4);
+//                     // ---> This is text from the 02_txt file (append this!)
 
-                })
-            })
-        })
-    })
-})
+//                 })
+//             })
+//         })
+//     })
+// })
 
-console.log('this will read first');
+// console.log('this will read first');
 
 /*
 node 02_node.js
@@ -139,6 +139,20 @@ const http = require('http');
 we use a method that is on that object
 create server will accept a callback function which will be fired off everytime a request hits our server 
 this callback function gets access to important variables - the request variable & the response variable */
-http.createServer((req, res) => {
+
+// we need to save the result of the createServer to a variable 
+const server = http.createServer((req, res) => {
     // we want to send a response back to the client
+    res.end('Hello from the server!');
+});
+
+// the second part is to listen to incoming requests from the client
+// listen accepts a few parameters, the first is the port # 
+// the second param is the host (we are using the local host)
+// we can optionally use a callback function which will be run as soon as the computer actually starts
+server.listen(8000,'127.0.0.1', () => {
+    console.log('listening to requests on port 8000');
 })
+
+// run the node application 
+// http:127.0.0.1:8000
