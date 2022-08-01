@@ -81,6 +81,8 @@ Reading and writing files in a non-blocking Asynchronous way*/
 // console.log('which log will happen first?');
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+// (this is not the recommended use of callbacks, this is just to learn read and write file)
+
 const fs = require('fs');
 // data 1 is within the 02 async file and it is : "02_txt_example"
 fs.readFile('02_async.txt', 'utf-8', (err,data1) => {
