@@ -84,15 +84,19 @@ Reading and writing files in a non-blocking Asynchronous way*/
 const fs = require('fs');
 // data 1 is within the 02 async file and it is : "02_txt_example"
 fs.readFile('02_async.txt', 'utf-8', (err,data1) => {
+    if (err) return console.log('There has been an error');
 
     // fs will open the file name from data1
     fs.readFile(`${data1}.txt`, 'utf-8', (err,data2) => {
+        if (err) return console.log('There has been an error');
 
         // console.log the data within 02_txt_example.txt
         // console.log(data2);
         // --->This is text from the 02_txt file
 
         fs.readFile('02_append.txt','utf-8',(err,data3) => {
+            if (err) return console.log('There has been an error');
+
             // console.log(data3)
             // ---> append this!
 
@@ -103,7 +107,8 @@ fs.readFile('02_async.txt', 'utf-8', (err,data1) => {
 
             fs.writeFile('02_final_append.txt', `${data2}`+ ' ' + `${data3}` ,'utf-8', err => {
                 fs.readFile('02_final_append.txt','utf-8',(err,data4) => {
-                    console.log(data4)
+                    if (err) return console.log('There has been an error');
+                    console.log(data4);
                     // ---> This is text from the 02_txt file (append this!)
 
                 })
@@ -112,7 +117,7 @@ fs.readFile('02_async.txt', 'utf-8', (err,data1) => {
     })
 })
 
-console.log('this will read first')
+console.log('this will read first');
 
 /*
 node 02_node.js
