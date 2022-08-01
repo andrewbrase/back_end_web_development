@@ -32,3 +32,11 @@ console.log('file has been written')
 This is from within the 02_txt_file: This is text from the 02_txt file.
 Created on 1659319241474
 */
+
+/* this code is synchronous - each statement is processed one after another, line by line
+synchronous code is also blocking code - each statement is read line by line
+an operation can only be executed after the statement above is executed
+the solution to this is to use asynchronous, non-blocking code
+in asynchronous code we offload the code to be worked on in the
+background, once that is done a callback function that we register before
+is called to handle the result */
