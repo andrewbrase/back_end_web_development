@@ -133,7 +133,7 @@ node is built around this philosophy of callbacks
 // CREATING A SIMPLE WEB SERVER
 // you must require the http module
 
-const http = require('http');
+// const http = require('http');
 
 /* we must create the server and then start the server
 we use a method that is on that object
@@ -157,6 +157,7 @@ this callback function gets access to important variables - the request variable
 // run the node application 
 // http:127.0.0.1:8000
 
+const http = require('http');
 
 const server = http.createServer((req, res) => {
     res.end('Hello from the server!');
