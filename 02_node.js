@@ -10,22 +10,22 @@ module and then store the result of the requiring function in a
 variable */
 
 // (fs stands for file system)
-const fs = require('fs');
+// const fs = require('fs');
 
-// this is the documentation on node - https://nodejs.org/en/docs/
-// how to read and write data from/to files
+// // this is the documentation on node - https://nodejs.org/en/docs/
+// // how to read and write data from/to files
 
-// this takes in 2 arguments, the path to the file & the character encoding
-const textIn = fs.readFileSync('02_txt_example.txt','utf-8');
-console.log(textIn);
+// // this takes in 2 arguments, the path to the file & the character encoding
+// const textIn = fs.readFileSync('02_txt_example.txt','utf-8');
+// console.log(textIn);
 
-// ---> This is text from the 02_txt file
+// // ---> This is text from the 02_txt file
 
-// how to write to a file
-const textOut = `This is from within the 02_txt_file: ${textIn}.\nCreated on ${Date.now()}`
-// dont save the write to a variable
-fs.writeFileSync('02_output.txt', textOut);
-console.log('file has been written')
+// // how to write to a file
+// const textOut = `This is from within the 02_txt_file: ${textIn}.\nCreated on ${Date.now()}`
+// // dont save the write to a variable
+// fs.writeFileSync('02_output.txt', textOut);
+// console.log('file has been written')
 
 /*
 ---> file has been written
@@ -68,4 +68,26 @@ callbacks do not always mean asynchronous automatically,
 it only works this way for certain functions
 
 you should use promises or Asynch/Await if you have too many callbacks (touched on later in the course)
-*/
+
+Reading and writing files in a non-blocking Asynchronous way*/
+
+// const fs = require('fs');
+// // the second parameter will be the callback function
+// // it calls this callback function with 2 arguments - the first 
+// // one is the error, and the second is the actual data
+// fs.readFile('02_txt_example.txt', 'utf-8', (err,data) => {
+//     console.log(data);
+// });
+// console.log('which log will happen first?');
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+const fs = require('fs');
+// data 1 is within the 02 async file and it is : "02_txt_example"
+fs.readFile('02_async.txt', 'utf-8', (err,data1) => {
+    // fs will open the file name from data1
+    fs.readFile(`${data1}.txt`, 'utf-8', (err,data2) => {
+        // console.log the data within 02_txt_example.txt
+        console.log(data2)
+    })
+})
+console.log('this will read first')
