@@ -1,3 +1,6 @@
+// install node
+// npm install -g nodemon
+
 // const hello = "hello world";
 // console.log(hello);
 
@@ -169,19 +172,33 @@ this callback function gets access to important variables - the request variable
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 // ROUTING 
 // implementing different actions for URL
-// express can be used as a tool to help with routing , we will use a built in node module called URL
-
+// express can be used as a tool to help with routing , 
+// while learning node, we will use a built in node module called URL
+console.log('TEST')
 const http = require('http');
+
+/*the url module can be used when urls include things 
+like ids & other parameters
+what the url module will help us with is parse 
+through parameters and values into an object */
+
 const url = require('url');
 
 const server = http.createServer((req, res) => {
-    console.log(req.url);
-    res.end('Hello from the server!');
+    const pathName = req.url;
+    // based on that path name, different routes will be taken
+    if(pathName === '/' || pathName === '/overview'){
+        res.end('This is the overview page!');
+    } else if (pathName === '/product'){
+        res.end('this is the product page!');
+    }
 });
+
 server.listen(8000,'127.0.0.1', () => {
     console.log('listening to requests on port 8000');
 }); 
 
-// http://127.0.0.1:8000/overview
+// http://127.0.0.1:8000
 // console.log(req.url);
-// ---> /overview
+// ---> /
+// ---> /favicon.ico
