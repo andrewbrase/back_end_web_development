@@ -141,18 +141,26 @@ create server will accept a callback function which will be fired off everytime 
 this callback function gets access to important variables - the request variable & the response variable */
 
 // we need to save the result of the createServer to a variable 
-const server = http.createServer((req, res) => {
-    // we want to send a response back to the client
-    res.end('Hello from the server!');
-});
+// const server = http.createServer((req, res) => {
+//     // we want to send a response back to the client
+//     res.end('Hello from the server!');
+// });
 
-// the second part is to listen to incoming requests from the client
-// listen accepts a few parameters, the first is the port # 
-// the second param is the host (we are using the local host)
-// we can optionally use a callback function which will be run as soon as the computer actually starts
-server.listen(8000,'127.0.0.1', () => {
-    console.log('listening to requests on port 8000');
-})
+// // the second part is to listen to incoming requests from the client
+// // listen accepts a few parameters, the first is the port # 
+// // the second param is the host (we are using the local host)
+// // we can optionally use a callback function which will be run as soon as the computer actually starts
+// server.listen(8000,'127.0.0.1', () => {
+//     console.log('listening to requests on port 8000');
+// });
 
 // run the node application 
 // http:127.0.0.1:8000
+
+
+const server = http.createServer((req, res) => {
+    res.end('Hello from the server!');
+});
+server.listen(8000,'127.0.0.1', () => {
+    console.log('listening to requests on port 8000');
+}); 
