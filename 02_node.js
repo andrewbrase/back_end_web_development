@@ -128,3 +128,17 @@ node 02_node.js
 
 node is built around this philosophy of callbacks
 */
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+// CREATING A SIMPLE WEB SERVER
+// you must require the http module
+
+const http = require('http');
+
+/* we must create the server and then start the server
+we use a method that is on that object
+create server will accept a callback function which will be fired off everytime a request hits our server 
+this callback function gets access to important variables - the request variable & the response variable */
+http.createServer((req, res) => {
+    // we want to send a response back to the client
+})
