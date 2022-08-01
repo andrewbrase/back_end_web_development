@@ -1,5 +1,5 @@
-const hello = "hello world";
-console.log(hello);
+// const hello = "hello world";
+// console.log(hello);
 
 /* to run file with node.js - node 02_node.js
 ---> hello world
@@ -13,3 +13,22 @@ variable */
 const fs = require('fs');
 
 // this is the documentation on node - https://nodejs.org/en/docs/
+// how to read and write data from/to files
+
+// this takes in 2 arguments, the path to the file & the character encoding
+const textIn = fs.readFileSync('02_txt_example.txt','utf-8');
+console.log(textIn);
+
+// ---> This is text from the 02_txt file
+
+// how to write to a file
+const textOut = `This is from within the 02_txt_file: ${textIn}.\nCreated on ${Date.now()}`
+// dont save the write to a variable
+fs.writeFileSync('02_output.txt', textOut);
+console.log('file has been written')
+
+/*
+---> file has been written
+This is from within the 02_txt_file: This is text from the 02_txt file.
+Created on 1659319241474
+*/

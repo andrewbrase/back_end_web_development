@@ -1,0 +1,2 @@
+This is from within the 02_txt_file: This is text from the 02_txt file.
+Created on 1659319241474
