@@ -113,3 +113,11 @@ fs.readFile('02_async.txt', 'utf-8', (err,data1) => {
 })
 
 console.log('this will read first')
+
+/*
+node 02_node.js
+---> 'this will read first'
+---> This is text from the 02_txt file (append this!) 
+
+node is built around this philosophy of callbacks
+*/
