@@ -51,6 +51,21 @@ fs.readFile('02_txt_example.txt', 'utf-8', (err,data) => {
 });
 console.log('reading file...');
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 the reason why callbacks are used so often in node.js
 a node.js process (where the application is running) - there is
-only one single thread */
+only one single thread, (a thread is like a set of instructions 
+that is run in a computers cpu, the thread is where the code is 
+executed in the machines processor )  for each application there's only
+one thread - all the users accessing the application are using a single
+thread - if a user would block the thread with synchronous code,
+the other users would have to wait for that execution to finish 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+non-blocking io (input/output) model - accessing the file system 
+and handling the network requests
+
+callbacks do not always mean asynchronous automatically,
+it only works this way for certain functions
+
+you should use promises or Asynch/Await if you have too many callbacks (touched on later in the course)
+*/
