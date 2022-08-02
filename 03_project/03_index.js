@@ -48,6 +48,7 @@ if(pathName === "/" || pathName === "/home") {
     // this will replace the placeholders
 
     const cardsHtml = dataObj.map(el => replaceTemplate(tempCard, el)).join('');
+    console.log(cardsHtml)
     const output = productpage.replace('{%PRODUCT_CARDS%}', cardsHtml);
     res.end(output)
 
