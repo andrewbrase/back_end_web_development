@@ -217,9 +217,8 @@ this callback function gets access to important variables - the request variable
 // BUILDING A VERY SIMPLE API
 // an api is a service from which we can request data
 // the data from 02_json.json is what will be retrieved by the api
-
-
-const http = require('http')
+const fs = require('fs');
+const http = require('http');
 
 const server = http.createServer((req, res) => {
     const pathName = req.url;
@@ -228,7 +227,19 @@ const server = http.createServer((req, res) => {
         res.end('this is the homepage!');
     } else if (pathName === '/prod') {
         res.end('this is the product page!');
-    }else {
+    } else if (pathName === '/api'){
+        // we want to read the data from the file and parse
+        // json into javascript and then send back that result to the client
+        fs.readFile('02_json.json', 'utf-8', (err,data) => {
+            // JSON.parse will take the JSON code (which is actually a string) and 
+            // will then automatically turn it into a JS object
+            const productData = JSON.parse(data);
+            //next step is to send back this data as the response
+            // we need to tell the brwser we are sending back JSON data
+            res.writeHead(200, {'Content-type':'application/json'})
+            res.end(data);
+        });
+    } else {
         res.writeHead(404, {
             'Content-type': 'text/html',
             'my-own-header': 'hello'
@@ -238,5 +249,38 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(8000, '127.0.0.1', () => {
-    console.log('listening to requests on port 8000')
+    console.log('listening to requests on port 8000');
 })
+
+// console.log(productData);
+            // ---> data from JSON
+            // [
+            //     {
+            //       id: 0,
+            //       productName: 'avocados',
+            //       from: 'Spain',
+            //       price: '1.30',
+            //       organic: true
+            //     },
+            //     {
+            //       id: 1,
+            //       productName: 'corn',
+            //       from: 'Illinois',
+            //       price: '0.40',
+            //       organic: true
+            //     },
+            //     {
+            //       id: 2,
+            //       productName: 'Mellon',
+            //       from: 'California',
+            //       price: '4.00',
+            //       organic: true
+            //     },
+            //     {
+            //       id: 3,
+            //       productName: 'Apple',
+            //       from: 'China',
+            //       price: '0.70',
+            //       organic: false
+            //     }
+            //   ]
