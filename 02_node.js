@@ -286,23 +286,27 @@ this callback function gets access to important variables - the request variable
             //     }
             //   ]
             
-// this can be simplified
+// this is not efficient, each time that someone uses the api route, the file will have to be read and sent back
+// instead what we can do is to read the file once in the beggining and then once someone hits the route - simply send back the
+// data without having to read it each time it is requested
+
+// we will use the synchronous version, it is not a problem becuase the top level code gets executed once in the beginning
 const fs = require('fs');
 const http = require('http');
+
+const data = fs.readFileSync('02_json.json', 'utf-8');
+const dataObj = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
     const pathName = req.url;
 
-    if(pathName === '/' || pathName === '/home') {
+    if (pathName === '/' || pathName === '/home') {
         res.end('this is the homepage!');
     } else if (pathName === '/prod') {
         res.end('this is the product page!');
-    } else if (pathName === '/api'){
-        fs.readFile('02_json.json', 'utf-8', (err,data) => {
-            const productData = JSON.parse(data);
-            res.writeHead(200, {'Content-type':'application/json'})
-            res.end(data);
-        });
+    } else if (pathName === '/api') {
+        res.writeHead(200, {'Content-type': 'application/json'});
+        res.end(data)
     } else {
         res.writeHead(404, {
             'Content-type': 'text/html',
