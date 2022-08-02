@@ -1,0 +1,23 @@
+[
+    {
+    "product" : "Router",
+    "cost" : 150,
+    "condition" : "New",
+    "manufacturer" : "NetaLink",
+    "works" : true
+    },
+    {
+    "product" : "Firewall",
+    "cost" : 50,
+    "condition" : "Pre-owned",
+    "manufacturer" : "Fortiwatch",
+    "works" : false
+    },
+    {
+    "product" : "Switch",
+    "cost" : "90",
+    "condition" : "Outdated",
+    "manufacturer" : "Switchco",
+    "works" : true
+    }
+]
