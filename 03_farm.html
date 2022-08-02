@@ -6,7 +6,17 @@
 
     <body>
         <h1>food market project</h1>
-        <table>
+
+        <style>
+            .not_organic {
+                display: none;
+            }
+            .border{
+                border: 2px solid black;
+            }
+        </style>
+
+        <table class="border">
             <tr>
                 <th>Product</th>
                 <th>Origin</th>
@@ -14,28 +24,28 @@
                 <th>Organic</th>
             </tr>
             <tr>
-                <td>{%PROD%}</td>
+                <td><a href="/product?id={%ID%}">{%PROD%}</a></td>
                 <td>{%FROM%}</td>
                 <td>{%COST%}</td>
-                <td>{%ORGA%}</td>
+                <td class="{%NOT_ORG}">{%ORGA%}</td>
             </tr>
             <tr>
-                <td>{%PROD%}</td>
+                <td><a href="/product?id={%ID%}">{%PROD%}</a></td>
                 <td>{%FROM%}</td>
                 <td>{%COST%}</td>
-                <td>{%ORGA%}</td>
+                <td class="{%NOT_ORG}">{%ORGA%}</td>
             </tr>
             <tr>
-                <td>{%PROD%}</td>
+                <td><a href="/product?id={%ID%}">{%PROD%}</a></td>
                 <td>{%FROM%}</td>
                 <td>{%COST%}</td>
-                <td>{%ORGA%}</td>
+                <td class="{%NOT_ORG}">{%ORGA%}</td>
             </tr>
             <tr>
-                <td>{%PROD%}</td>
+                <td><a href="/product?id={%ID%}">{%PROD%}</a></td>
                 <td>{%FROM%}</td>
                 <td>{%COST%}</td>
-                <td>{%ORGA%}</td>
+                <td class="{%NOT_ORG}">{%ORGA%}</td>
             </tr>
         </table>
     </body>
