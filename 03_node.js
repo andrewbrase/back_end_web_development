@@ -1,13 +1,3 @@
-// create the replace template function
-const replaceTemplate = (temp,product) => {
-    // the . after the product is from the json file the name of the field
-    let output = temp.replace(/{%PROD%}/g, product.productName);
-    // after the arg that was passed into the function is defined then we can alter it, a let can be mutated after it's been created
-    output = output.replace(/{%FROM%}/g,product.from);
-    output = output.replace(/{%COST%}/g,product.price);
-    output = output.replace(/{%ORGA%}/g,product.organic);
-}
-
 // we must replace the placeholders in the 03_html file with data from the json file
 
 const fs = require('fs');
@@ -23,6 +13,18 @@ const dataObj = JSON.parse(jsonData);
 const home = fs.readFileSync('03_farm.html','utf-8');
 const prod = fs.readFileSync('03_prod.html','utf-8');
 
+// create the replace template function
+const replaceTemplate = (temp,product) => {
+    // the . after the product is from the json file the name of the field
+    let output = temp.replace(/{%PROD%}/g, product.productName);
+    // after the arg that was passed into the function is defined then we can alter it, a let can be mutated after it's been created
+    output = output.replace(/{%FROM%}/g,product.from);
+    output = output.replace(/{%COST%}/g,product.price);
+
+    if (!product.organic) output = output.replace(/{%NOT_ORG%}/g, 'not-organic');
+    return output;
+}
+
 const server = http.createServer((req,res) => {
     const pathName = req.url;
 
@@ -35,6 +37,7 @@ const server = http.createServer((req,res) => {
         // map will accept a callback function, whatever is returned will be saved into an array
         // a function will be created to replace everything in the template for the data from json
         const cardsHtml = dataObj.map(el => replaceTemplate(tempCard, el))
+        console.log(cardsHtml);
         res.end(home);
     
     // Product page
