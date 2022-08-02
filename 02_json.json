@@ -1,0 +1,31 @@
+[
+    {
+    "id":0,
+    "productName":"avocados",
+    "from":"Spain",
+    "price":"1.30",
+    "organic":true
+    },
+    {
+    "id":1,
+    "productName":"corn",
+    "from":"Illinois",
+    "price":"0.40",
+    "organic":true
+    },
+    {
+    "id":2,
+    "productName":"Mellon",
+    "from":"California",
+    "price":"4.00",
+    "organic":true
+    },
+    {
+    "id":3,
+    "productName":"Apple",
+    "from":"China",
+    "price":"0.70",
+    "organic":false
+    }
+    
+]

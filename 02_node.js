@@ -215,3 +215,28 @@ this callback function gets access to important variables - the request variable
 // ---> /favicon.ico
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 // BUILDING A VERY SIMPLE API
+// an api is a service from which we can request data
+// the data from 02_json.json is what will be retrieved by the api
+
+
+const http = require('http')
+
+const server = http.createServer((req, res) => {
+    const pathName = req.url;
+
+    if(pathName === '/' || pathName === '/home') {
+        res.end('this is the homepage!');
+    } else if (pathName === '/prod') {
+        res.end('this is the product page!');
+    }else {
+        res.writeHead(404, {
+            'Content-type': 'text/html',
+            'my-own-header': 'hello'
+        });
+        res.end('<h1>Page not found!</h1>');
+    }
+});
+
+server.listen(8000, '127.0.0.1', () => {
+    console.log('listening to requests on port 8000')
+})
