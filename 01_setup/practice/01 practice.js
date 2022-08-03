@@ -32,4 +32,4 @@ console.log(addToEnd);
 // to add something to the beginning of an array
 addToBeg = [1,2,3,4,5,6];
 addToBeg.unshift(0);
-consol
+console.log(addToBeg);
