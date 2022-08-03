@@ -50,3 +50,21 @@ the package that we will install is called slugify - a small tool that we can us
 
 >npm install {name of package}
 >npm install slugify
+
+--->
+node_modules/slugify/package.json
+--->
+"name": "slugify",
+  "version": "1.6.5",
+  "description": "Slugifies a String",
+  "keywords": [
+    "slugify",
+    "slug",
+    "url",
+    "urlify"
+  ],
+  etc.
+  etc.
+  etc.
+
+  ----------------------------------------------------------------------
