@@ -1,5 +1,6 @@
 [
     {
+    "id" : 0,
     "product" : "Router",
     "cost" : 150,
     "condition" : "New",
@@ -7,6 +8,7 @@
     "works" : "✔"
     },
     {
+    "id" : 1,
     "product" : "Firewall",
     "cost" : 50,
     "condition" : "Pre-owned",
@@ -14,6 +16,7 @@
     "works" : "❌"
     },
     {
+    "id" : 2,
     "product" : "Switch",
     "cost" : "90",
     "condition" : "Outdated",

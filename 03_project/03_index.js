@@ -21,22 +21,23 @@ const replaceTemplate = (temp,product) => {
     output = output.replace(/{%COND%}/g, product.condition);
     output = output.replace(/{%MANU%}/g, product.manufacturer);
     output = output.replace(/{%WORK%}/g, product.works);
+    output = output.replace(/{%ID%}/g,product.id);
     return output;
 }
 
 // creating server
 const server = http.createServer((req, res) => {
-    const pathName = req.url;
+    const { query, pathname } = url.parse(req.url, true);
 
 // home page
-if(pathName === "/" || pathName === "/home") {
+if(pathname === "/" || pathname === "/home") {
     res.writeHead(200, {
         'Content-type' : 'text/html'
     });
     res.end(homepage)
 
 // market page
-} else if (pathName === '/market') {
+} else if (pathname === '/market') {
     res.writeHead(200, {
         'Content-type' : 'text/html'
     });
@@ -51,11 +52,11 @@ if(pathName === "/" || pathName === "/home") {
     res.end(output)
 
 // other page
-} else if (pathName === '/other') {
-    res.writeHead(200, {
-        'Content-type' : 'text/html'
-    });
-    res.end(otherpage)
+} else if (pathname === '/product') {
+    res.writeHead(200, { 'Content-type': 'text/html'});
+    const product = dataObj[query.id];
+    const output = replaceTemplate(otherpage, product);
+    res.end(output);
     
 } else {
     res.writeHead(404, {
