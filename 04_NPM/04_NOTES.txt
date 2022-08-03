@@ -6,6 +6,35 @@ NPM also has React packages, express etc. - a lot of different areas of the stac
 the first thing we usually do when starting a project is to use npm init
 
 >npm init
+--->
+creates a package.json file
+
+>>>
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (04_npm)
+>>>
+
+---> created this file
+{
+  "name": "node-farm",
+  "version": "1.0.0",
+  "description": "Learning node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew",
+  "license": "ISC"
+}
+
+--- there is a lot othe things that can be added to this file, which we will do later on
+--- we can start installing packages, they will be registered in that file
 
 this will basically create a package.json file which is kind of a configuration file of our project
 all kinds of data is stored here
