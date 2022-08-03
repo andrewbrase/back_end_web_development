@@ -2,6 +2,8 @@
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
+// importing our replaceTemplate module
+const replaceTemplate = require('./03_modules/replaceTemplate')
 
 // assigning html pages to consts
 const homepage = fs.readFileSync('03_home.html', 'utf-8');
@@ -12,18 +14,6 @@ const tempCard = fs.readFileSync('03_temp_card.html', 'utf-8');
 // parsing the JSON data to dataObj to be used w/ JS
 const data = fs.readFileSync(`${__dirname}/03_json.json`, 'utf-8');
 const dataObj = JSON.parse(data);
-
-// replace template function - takes in a template and a product
-const replaceTemplate = (temp,product) => {
-    // replaces whatever was the placeholder for the product from json file .product
-    let output = temp.replace(/{%PROD%}/g, product.device);
-    output = output.replace(/{%COST%}/g, product.cost);
-    output = output.replace(/{%COND%}/g, product.condition);
-    output = output.replace(/{%MANU%}/g, product.manufacturer);
-    output = output.replace(/{%WORK%}/g, product.works);
-    output = output.replace(/{%ID%}/g, product.id);
-    return output;
-}
 
 // creating server
 const server = http.createServer((req, res) => {
