@@ -28,7 +28,7 @@ const replaceTemplate = (temp,product) => {
 const server = http.createServer((req, res) => {
     const pathName = req.url;
 
-//Home page
+// home page
 if(pathName === "/" || pathName === "/home") {
     res.writeHead(200, {
         'Content-type' : 'text/html'
@@ -57,8 +57,6 @@ if(pathName === "/" || pathName === "/home") {
     res.writeHead(200, {
         'Content-type' : 'text/html'
     });
-
-    //
     res.end(otherpage)
     
 } else {
@@ -66,11 +64,8 @@ if(pathName === "/" || pathName === "/home") {
         'Content-type': 'text/html',
         'my-own-header': 'hello'
     });
-
-
     res.end('<h1>Page not found!</h1>');
 }
-
 });
 
 server.listen(8000, '127.0.0.1', () => {
