@@ -3,3 +3,9 @@ a CLI app that automatically comes included with node js and is used to install 
 these packages are usually located in the package repository @ npmjs.com
 
 NPM also has React packages, express etc. - a lot of different areas of the stack
+the first thing we usually do when starting a project is to use npm init
+
+>npm init
+
+this will basically create a package.json file which is kind of a configuration file of our project
+all kinds of data is stored here
