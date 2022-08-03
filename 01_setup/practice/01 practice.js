@@ -23,6 +23,17 @@ var b = 2; // - declaring and assigning b to = (assign) 2
 
 // 13:00 - https://www.youtube.com/watch?v=PkZNo7MFNFg
 
+// function 
+function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+    var result = '';
+    result += "The " + myAdjective + " " + myNoun + " " + myVerb + " to the store " + myAdverb;
+    return result;
+}
+
+console.log(wordBlanks("dog","big","ran","quickly"));
+
+// ---> The big dog ran to the store quickly
+
 // to add an item to the end of an array, use push
 var addToEnd = [1,2,3,4,5];
 addToEnd.push(6);
@@ -33,3 +44,4 @@ console.log(addToEnd);
 addToBeg = [1,2,3,4,5,6];
 addToBeg.unshift(0);
 console.log(addToBeg);
+// ---> [0,1,2,3,4,5,6]
