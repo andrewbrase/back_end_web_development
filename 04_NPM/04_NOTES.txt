@@ -1,1 +1,3 @@
 NPM - Node Package Manager
+a CLI app that automatically comes included with node js and is used to install and manage open source packages,
+these packages are usually located in the package repository @ npmjs.com
