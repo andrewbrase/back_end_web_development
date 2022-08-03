@@ -22,3 +22,14 @@ var a; //declaring a variable to be called a
 var b = 2; // - declaring and assigning b to = (assign) 2
 
 // 13:00 - https://www.youtube.com/watch?v=PkZNo7MFNFg
+
+// to add an item to the end of an array, use push
+var addToEnd = [1,2,3,4,5];
+addToEnd.push(6);
+console.log(addToEnd);
+// ---> [1, 2, 3, 4, 5, 6]
+
+// to add something to the beginning of an array
+addToBeg = [1,2,3,4,5,6];
+addToBeg.unshift(0);
+consol
