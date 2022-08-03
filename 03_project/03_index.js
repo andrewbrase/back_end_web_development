@@ -16,12 +16,12 @@ const dataObj = JSON.parse(data);
 // replace template function - takes in a template and a product
 const replaceTemplate = (temp,product) => {
     // replaces whatever was the placeholder for the product from json file .product
-    let output = temp.replace(/{%PROD%}/g, product.product);
+    let output = temp.replace(/{%PROD%}/g, product.device);
     output = output.replace(/{%COST%}/g, product.cost);
     output = output.replace(/{%COND%}/g, product.condition);
     output = output.replace(/{%MANU%}/g, product.manufacturer);
     output = output.replace(/{%WORK%}/g, product.works);
-    output = output.replace(/{%ID%}/g,product.id);
+    output = output.replace(/{%ID%}/g, product.id);
     return output;
 }
 
@@ -34,7 +34,7 @@ if(pathname === "/" || pathname === "/home") {
     res.writeHead(200, {
         'Content-type' : 'text/html'
     });
-    res.end(homepage)
+    res.end(homepage);
 
 // market page
 } else if (pathname === '/market') {
@@ -47,9 +47,9 @@ if(pathname === "/" || pathname === "/home") {
     // this will replace the placeholders
 
     const cardsHtml = dataObj.map(el => replaceTemplate(tempCard, el)).join('');
-    console.log(cardsHtml)
+    console.log(cardsHtml);
     const output = productpage.replace('{%PRODUCT_CARDS%}', cardsHtml);
-    res.end(output)
+    res.end(output);
 
 // other page
 } else if (pathname === '/product') {
@@ -68,5 +68,5 @@ if(pathname === "/" || pathname === "/home") {
 });
 
 server.listen(8000, '127.0.0.1', () => {
-    console.log('Listening to requests on port 8000')
+    console.log('Listening to requests on port 8000');
 });
