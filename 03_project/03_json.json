@@ -4,20 +4,20 @@
     "cost" : 150,
     "condition" : "New",
     "manufacturer" : "NetaLink",
-    "works" : true
+    "works" : "✔"
     },
     {
     "product" : "Firewall",
     "cost" : 50,
     "condition" : "Pre-owned",
     "manufacturer" : "Fortiwatch",
-    "works" : false
+    "works" : "❌"
     },
     {
     "product" : "Switch",
     "cost" : "90",
     "condition" : "Outdated",
     "manufacturer" : "Switchco",
-    "works" : true
+    "works" : "✔"
     }
 ]
