@@ -38,3 +38,15 @@ package name: (04_npm)
 
 this will basically create a package.json file which is kind of a configuration file of our project
 all kinds of data is stored here
+
+
+----------------------------------------------------------------------
+Types of packages and installs
+
+- simple/regular dependencies - packages that contain some code that we will include in our own code - code in which we build our own app
+- development dependencies - ???
+
+the package that we will install is called slugify - a small tool that we can use to make more readable URLs
+
+>npm install {name of package}
+>npm install slugify
