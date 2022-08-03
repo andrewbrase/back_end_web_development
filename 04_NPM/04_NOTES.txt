@@ -44,7 +44,6 @@ all kinds of data is stored here
 Types of packages and installs
 
 - simple/regular dependencies - packages that contain some code that we will include in our own code - code in which we build our own app
-- development dependencies - ???
 
 the package that we will install is called slugify - a small tool that we can use to make more readable URLs
 
@@ -68,3 +67,8 @@ node_modules/slugify/package.json
   etc.
 
   ----------------------------------------------------------------------
+
+- development dependencies - tools for development like a code bundler or debugger tool 
+or testing lab, not needed in the actual code,
+
+we will install a dev dependency
