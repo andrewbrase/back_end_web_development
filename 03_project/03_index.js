@@ -3,7 +3,7 @@ const fs = require('fs');
 const http = require('http');
 const url = require('url');
 // importing our replaceTemplate module
-const replaceTemplate = require('./03_modules/replaceTemplate')
+const replaceTemplate = require('./03_modules/replaceTemplate');
 
 // assigning html pages to consts
 const homepage = fs.readFileSync('03_home.html', 'utf-8');
