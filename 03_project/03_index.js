@@ -33,8 +33,6 @@ if(pathName === "/" || pathName === "/home") {
     res.writeHead(200, {
         'Content-type' : 'text/html'
     });
-
-    //
     res.end(homepage)
 
 // market page
