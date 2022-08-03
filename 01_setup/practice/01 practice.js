@@ -41,7 +41,28 @@ console.log(addToEnd);
 // ---> [1, 2, 3, 4, 5, 6]
 
 // to add something to the beginning of an array
-addToBeg = [1,2,3,4,5,6];
+var addToBeg = [1,2,3,4,5,6];
 addToBeg.unshift(0);
 console.log(addToBeg);
 // ---> [0,1,2,3,4,5,6]
+
+
+// These do not need anything entered into the (), unlike push and unshift
+
+
+// mutate arrays with .pop()
+// .pop()
+var newArr = [1,2,3,4,5,"last"];
+var removedFromArr = newArr.pop();
+console.log(removedFromArr);
+// ---> "last"
+
+// shift - removes the front element of an array -> reverse of unshift
+// shift off the first element
+// .shift()
+shiftArr = [1,2,3,4,5];
+newShift = shiftArr.shift();
+console.log(newShift);
+console.log(shiftArr);
+// ---> 1
+// ---> [2,3,4,5]
