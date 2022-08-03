@@ -5,7 +5,7 @@
     "cost" : 150,
     "condition" : "New",
     "manufacturer" : "NetaLink",
-    "works" : "✔"
+    "works" : "Yes"
     },
     {
     "id" : 1,
@@ -13,7 +13,7 @@
     "cost" : 50,
     "condition" : "Pre-owned",
     "manufacturer" : "Fortiwatch",
-    "works" : "❌"
+    "works" : "No"
     },
     {
     "id" : 2,
@@ -21,6 +21,6 @@
     "cost" : "90",
     "condition" : "Outdated",
     "manufacturer" : "Switchco",
-    "works" : "✔"
+    "works" : "Yes"
     }
 ]
