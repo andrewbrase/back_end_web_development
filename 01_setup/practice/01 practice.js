@@ -326,7 +326,7 @@ function betterThanAverage(classPoints, yourPoints) {
   }
 // ----------------------------------------------
 
-  //   repeat method
+  // repeat method
   num = 3
   str = 'hello'
   function repeatStr (n, s) {
