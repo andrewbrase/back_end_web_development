@@ -274,6 +274,28 @@ function basicOp(op, v1, v2) {
     }
 }
 
-  basicOp(op,val1,val2);
-// look up case & switch !!!
-// ----------------------------------------------
+basicOp(op,val1,val2);
+
+// better method
+op = '+'
+v1 = 2;
+v2 = 10;
+
+switch (op) {
+    case '+':
+        console.log(v1+v2);
+        break;
+    case '-':
+        console.log(v1-v2);
+        break;
+    case '*':
+        console.log(v1*v2);
+        break;
+    case '/':
+        console.log(v1/v2);
+        break;
+    default:
+        console.log('please use +, -, * or /');
+        break;
+}
+// ---> 12
