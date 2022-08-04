@@ -222,3 +222,14 @@ function solution(str){
 }
 
 solution(string);
+
+///
+
+newStr = 'cool are lizards'
+
+function splitAndReverse(string){
+    return string.split(' ').reverse().join(' ')
+}
+
+splitAndReverse(newStr);
+// ---> lizards are cool
