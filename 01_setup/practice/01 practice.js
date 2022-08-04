@@ -173,6 +173,11 @@ function testSize(num){
 }
 
 testSize(19);
+//instead of using chained else if statements, you can use a switch statement
+// https://www.youtube.com/watch?v=PkZNo7MFNFg&t=1294s - 1:32:23
+
+
+//
 // ---> normal 
 
 // && and op
