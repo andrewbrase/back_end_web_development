@@ -233,3 +233,13 @@ function splitAndReverse(string){
 
 splitAndReverse(newStr);
 // ---> lizards are cool
+// ----------------------------------------------
+// Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+numb = 2
+
+var summation = function (num) {
+    for (sum = 0, i = 0; i < num; i++, sum += i);
+    return sum;
+  }
+
+  summation(numb)
