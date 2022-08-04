@@ -299,3 +299,28 @@ switch (op) {
         break;
 }
 // ---> 12
+
+classa = [2,3];
+youra = 5;
+
+function betterThanAverage(classPoints, yourPoints) {
+    var classAv = 0
+    var len = classPoints.length
+    for (var number of classPoints) {
+      classAv += number
+    }
+    var classAv = classAv / len
+    
+    if (classAv < yourPoints){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  betterThanAverage(classa,youra)
+
+  // better way
+  function betterThanAverage(classPoints, yourPoints) {
+    return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+  }
