@@ -130,7 +130,33 @@ console.log('this is before: ' + JSON.stringify(arrayTwo));
 addToStart(arrayTwo,5);
 console.log('this is after: ' + JSON. stringify(arrayTwo));
 
-// this is before: [6,7,8,9,10]
-// this is after: [5,6,7,8,9,10]
+// ---> this is before: [6,7,8,9,10]
+// ---> this is after: [5,6,7,8,9,10]
+
 // ----------------------------------------------
+// JavaScript supports different kinds of loops:
+
+// for - loops through a block of code a number of times
+// for/in - loops through the properties of an object
+// for/of - loops through the values of an iterable object
+// while - loops through a block of code while a specified condition is true
+// do/while - also loops through a block of code while a specified condition is true
+
+// For Loop
+// Statement 1 is executed (one time) before the execution of the code block.
+// Statement 2 defines the condition for executing the code block
+// Statement 3 is executed (every time) after the code block has been executed.
+for(let i = 0; i < 77; i ++){
+    console.log(i)
+}
+// ---> logs 1 - 77
+
+// ----------------------------------------------
+var car = ['red car ','green car ','blue car '];
+for (let i = 0; i < car.length; i ++){
+    console.log(car[i] + (i+1));
+}
+// red car 1
+// green car 2
+// blue car 3
 
