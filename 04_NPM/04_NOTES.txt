@@ -72,3 +72,10 @@ node_modules/slugify/package.json
 or testing lab, not needed in the actual code,
 
 we will install a dev dependency
+modules >npm install nodemon --save-dev
+
+gloabl installs work accross all projects
+npm i nodemon --global
+
+how to use this
+nodemon 03_index.js
