@@ -324,3 +324,13 @@ function betterThanAverage(classPoints, yourPoints) {
   function betterThanAverage(classPoints, yourPoints) {
     return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
   }
+// ----------------------------------------------
+
+  //   repeat method
+  num = 3
+  str = 'hello'
+  function repeatStr (n, s) {
+    return s.repeat(n);
+  }
+
+  repeatStr(num,str)
