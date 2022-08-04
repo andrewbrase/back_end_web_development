@@ -134,6 +134,32 @@ console.log('this is after: ' + JSON. stringify(arrayTwo));
 // ---> this is after: [5,6,7,8,9,10]
 
 // ----------------------------------------------
+// Equality Operators 
+function checkIfEqual(num){
+    if (num % 2 === 0){
+        return "Yes this is even";
+    }else{
+        return "No this is not even";
+    }
+}
+
+checkIfEqual(10);
+// ---> 'Yes this is even'
+
+///
+boolVal = true
+function checkBool(bool){
+    if (bool){
+        return "Bool is true";
+    }else{
+        return "Bool is false";
+    }
+}
+
+checkBool(boolVal);
+// ---> 'Bool is true'
+
+// ----------------------------------------------
 // JavaScript supports different kinds of loops:
 
 // for - loops through a block of code a number of times
@@ -142,6 +168,7 @@ console.log('this is after: ' + JSON. stringify(arrayTwo));
 // while - loops through a block of code while a specified condition is true
 // do/while - also loops through a block of code while a specified condition is true
 
+// ----------------------------------------------
 // For Loop
 // Statement 1 is executed (one time) before the execution of the code block.
 // Statement 2 defines the condition for executing the code block
@@ -156,7 +183,7 @@ var car = ['red car ','green car ','blue car '];
 for (let i = 0; i < car.length; i ++){
     console.log(car[i] + (i+1));
 }
-// red car 1
-// green car 2
-// blue car 3
-
+// ---> red car 1
+// ---> green car 2
+// ---> blue car 3
+// ----------------------------------------------
