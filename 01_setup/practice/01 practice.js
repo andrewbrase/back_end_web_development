@@ -118,3 +118,19 @@ console.log("after: " + JSON.stringify(testArr));
 // ---> Before [1,2,3,4,5]
 // ---> 1
 // ---> [2,3,4,5,6]
+
+function addToStart(arr,addItem) {
+    arr.unshift(addItem);
+    return "added item is : " + addItem
+}
+
+var arrayTwo = [6,7,8,9,10];
+
+console.log('this is before: ' + JSON.stringify(arrayTwo));
+addToStart(arrayTwo,5);
+console.log('this is after: ' + JSON. stringify(arrayTwo));
+
+// this is before: [6,7,8,9,10]
+// this is after: [5,6,7,8,9,10]
+// ----------------------------------------------
+
