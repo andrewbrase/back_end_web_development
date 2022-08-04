@@ -90,9 +90,9 @@ var changed = 13;
 function changeFun(num){
     return num + 105;
 }
-console.log(changeFun(changed))
+console.log(changeFun(changed));
 // should not have been altered, only returned
-console.log(changed)
+console.log(changed);
 // --->118
 // --->13
 
@@ -104,7 +104,7 @@ of the sequence. */
 // items are kept in order, but things can be added to the start or end
 
 function nextInLine(arrayWeAreUsing, item) {
-    arrayWeAreUsing.push(item)
+    arrayWeAreUsing.push(item);
     return arrayWeAreUsing.shift();
 }
 
@@ -121,7 +121,7 @@ console.log("after: " + JSON.stringify(testArr));
 
 function addToStart(arr,addItem) {
     arr.unshift(addItem);
-    return "added item is : " + addItem
+    return "added item is : " + addItem;
 }
 
 var arrayTwo = [6,7,8,9,10];
@@ -147,7 +147,7 @@ checkIfEqual(10);
 // ---> 'Yes this is even'
 
 ///
-boolVal = true
+boolVal = true;
 function checkBool(bool){
     if (bool){
         return "Bool is true";
@@ -158,6 +158,25 @@ function checkBool(bool){
 
 checkBool(boolVal);
 // ---> 'Bool is true'
+
+// ----------------------------------------------
+function testSize(num){
+    if (num < 5){
+        return 'tiny';
+    } else if (num < 10){
+        return 'small';
+    } else if (num < 20){
+        return 'normal';
+    } else{
+        return 'BIG!';
+    }
+}
+
+testSize(19);
+// ---> normal 
+
+// && and op
+// || or op
 
 // ----------------------------------------------
 // JavaScript supports different kinds of loops:
@@ -174,7 +193,7 @@ checkBool(boolVal);
 // Statement 2 defines the condition for executing the code block
 // Statement 3 is executed (every time) after the code block has been executed.
 for(let i = 0; i < 77; i ++){
-    console.log(i)
+    console.log(i);
 }
 // ---> logs 1 - 77
 
