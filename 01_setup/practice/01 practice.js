@@ -211,3 +211,14 @@ for (let i = 0; i < car.length; i ++){
 // ---> green car 2
 // ---> blue car 3
 // ----------------------------------------------
+// reversing a string in JS
+string = 'hello';
+
+function solution(str){
+  var newArr = str.split("");
+  newArr.reverse();
+  newArr = newArr.join("");
+  return newArr;
+}
+
+solution(string);
