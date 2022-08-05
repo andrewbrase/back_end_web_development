@@ -229,3 +229,6 @@ libuv also implements 2 extremelyimportant features of node.js
 
 node allows us to write 100% pure JS code that allows for these functions like file access
 node also relies on things like http-parser {http requests}, c-ares {DNS requests}, openSSL{cryptography}, zlib{compression}
+
+node is single threaded
+node offloads expensive tasks to the thread pool to keep the event loop functional
