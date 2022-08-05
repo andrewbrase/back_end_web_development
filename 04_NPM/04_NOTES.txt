@@ -137,3 +137,5 @@ Accept_Language: en-US
 
 Contains data for ex. from an html form 
 <BODY>
+
+there is https - more secure - uses tls encryption 
