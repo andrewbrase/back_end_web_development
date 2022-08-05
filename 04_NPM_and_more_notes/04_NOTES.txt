@@ -215,3 +215,17 @@ with an API we only send the data to the browser, usually in JSON data format, n
 !!! An API can be consumed by other clients other than just a browser
 an API could transfer data between natice mobile apps, IOS and android and (mac OS native app also Windows native app) etc. not just a browser
 ----------------------------------------------------------------------
+
+Node architecture
+node runtime has several dependancies, the V8 JS engine and libuv
+V8 engine convers JS code into machine code that a computer can actually understand
+
+libuv is an open source library with a strong focus of asynchronous io (input output) 
+- this layer is what gives node access to the underlying OS , filesystem, networking and more
+libuv also implements 2 extremelyimportant features of node.js 
+- event loop - handles tasks like callback functions 
+- thread pool - (heavier work) handles tasks like file compression and file access
+* libuv is written in c++ and V8 as well
+
+node allows us to write 100% pure JS code that allows for these functions like file access
+node also relies on things like http-parser {http requests}, c-ares {DNS requests}, openSSL{cryptography}, zlib{compression}
