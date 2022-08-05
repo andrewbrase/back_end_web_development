@@ -80,3 +80,25 @@ npm i nodemon --global
 
 how to use this
 nodemon 03_index.js
+
+----------------------------------------------------------------------
+Package versioning and updating 
+
+how to check for outdated packages 
+>npm outdated
+
+--->
+Package   Current  Wanted  Latest  Location               Depended by
+mongoose    6.5.0   6.5.1   6.5.1  node_modules/mongoose  03_project
+
+>npm update {insert if you want specific}
+>npm update 
+(updates all)
+
+--- to delete modules ---
+npm uninstall {specific}
+----------------------------------------------------------------------
+the best way to share the node_modules folder is to 
+
+share file (NO node module folder)
+> npm install ---> this will read the project and install everything required within 
