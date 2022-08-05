@@ -102,3 +102,8 @@ the best way to share the node_modules folder is to
 
 share file (NO node module folder)
 > npm install ---> this will read the project and install everything required within 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+if you're sharing your code, always include the package.json and 
+package-lock.json file because these 2 files are necessary for the 
+other dev to reconstruct the modules folder
