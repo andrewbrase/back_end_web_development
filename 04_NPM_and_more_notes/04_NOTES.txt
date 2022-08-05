@@ -186,5 +186,31 @@ our backend stack : Node.js MongoDB
 
 You can have a noSQL or a SQL database
 ----------------------------------------------------------------------
-Static vs Dynamic API
+Static websites vs Dynamic websites
 
+* Static - the developer uploads the ready to be served files of the website onto the web server html,css,JS + more,
+these are the same files that the server will send to the client when the site is visited. The browser will take these files and render them as they are,
+there is no backend code or app running. Server is serving static files
+(You will always see the same website)
+
+* Dynamic - The website can change anytime based on the data from within the database . Dynamic websites usually contain a database, then there's usually an app running (like node.js) which fetches data from the datatbase ---> then togteher with a pre- defined template 
+builds each page that the user requests dynamically based on data from the database ---> that page is then built with html,css,JS which will then be set to the browser
+ex. (twitter gets updated everyday ith new tweets. If it was a static site, the tweets would not stay on that website)
+!!! This process is called Server side rendering !!!
+
+~~~
+API
+
+(Application Programming Interface)
+
+  |-------------------BUILDING API-------------------| |----------------------Consuming API----------------------|
+* API - database ---> GET DATA -----> JSON DATA <---> browser -> Build website w/ front end frameworks
+have an app that fetches data from the databse everytime the client makes a request
+with an API we only send the data to the browser, usually in JSON data format, not the ready to be displayed website (no html,css,JS)
+!!! front end frameworks build the site with the JSON data and template !!!
+!!! This is called  Client Side Rendering !!!
+
+~~In this course we will make both Dynamic - server side rendered website and an API client side rendered website 
+
+!!! An API can be consumed by other clients other than just a browser
+an API could transfer data between natice mobile apps, IOS and android and (mac OS native app also Windows native app) etc. not just a browser
