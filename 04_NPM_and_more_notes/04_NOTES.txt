@@ -214,3 +214,4 @@ with an API we only send the data to the browser, usually in JSON data format, n
 
 !!! An API can be consumed by other clients other than just a browser
 an API could transfer data between natice mobile apps, IOS and android and (mac OS native app also Windows native app) etc. not just a browser
+----------------------------------------------------------------------
