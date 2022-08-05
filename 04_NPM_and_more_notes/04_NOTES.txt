@@ -169,3 +169,19 @@ their destination they are reassembled
 
 IP
 job of ip protocol is to route the packets through the internet 
+----------------------------------------------------------------------
+back end server will include files and a HTTP server that is capable 
+of understanding URLs and requests and delivering responses
+the http server is like a bridge between the client and the back end files
+
+*This is a Static server - it can serve static files to the client via http
+Browser (front end html,css,JS, frameworks like React & Angular) <--> WEB SERVER {HTTP server <--> files}
+
+*Dynamic web apps talk to databases & etc. we use a server that is also
+capable of running our dynamic app
+this is called a Dynamic server
+Browser (front end html,css,JS, frameworks like React & Angular) <--> WEB SERVER {HTTP server <--> web app <--> files} <--> database
+
+our backend stack : Node.js MongoDB 
+
+You can have a noSQL or a SQL database
