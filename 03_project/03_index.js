@@ -1,9 +1,16 @@
-// requiring these modules
+// requiring these modules (1st)
 const { DiffieHellmanGroup } = require('crypto');
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
-// importing our replaceTemplate module
+
+// requiring third party modules (2nd)
+// slugify can be used to create slugs - the last part of a url 
+// - that identifies the resource that thewebsite is displaying
+const slugify = require('slugify');
+// https://www.npmjs.com/package/slugify
+
+// importing our replaceTemplate module (3rd)
 const replaceTemplate = require('./03_modules/replaceTemplate');
 
 // assigning html pages to consts
@@ -15,6 +22,15 @@ const tempCard = fs.readFileSync('03_temp_card.html', 'utf-8');
 // parsing the JSON data to dataObj to be used w/ JS
 const data = fs.readFileSync(`${__dirname}/03_json.json`, 'utf-8');
 const dataObj = JSON.parse(data);
+
+// looks in JSON file for device name
+const slugs = dataObj.map(el => slugify(el.device, { lower: true }))
+console.log(slugs)
+// ---> [ 'router', 'firewall', 'switch' ]
+
+// test of slugify
+console.log(slugify('Tech Page', {lower: true}));
+// ---> tech-page
 
 // creating server
 const server = http.createServer((req, res) => {
