@@ -185,3 +185,6 @@ Browser (front end html,css,JS, frameworks like React & Angular) <--> WEB SERVER
 our backend stack : Node.js MongoDB 
 
 You can have a noSQL or a SQL database
+----------------------------------------------------------------------
+Static vs Dynamic API
+
