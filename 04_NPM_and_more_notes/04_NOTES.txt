@@ -241,24 +241,28 @@ event-driven architecture: events are emitted > event loops pick them up > callb
 ex. new http request > event ---> callback
 
 The event Loop:
+each phase has its own callback queue
 
 Start
   |
   |
   V
-Expired timer callbacks
+(Expired timer callbacks) - for example setTimeout() function - if there are callback functions from timers that just expired these are 
+the first ones to be processed by the event loop. If a timer expires later durring one of the other phases, the callback will only be 
+called once the loop is returned to the timer callbacks phase until there are no more callbacks in the queue **
   |
   |
   V
-I/O (input/output) polling and callbacks
+(I/O (input/output) polling and callbacks) - polling means looking for new IO events that are ready to be proccessed and putting them into 
+the callback queue, (networking and file access) ex. fs.readFile() ****
   |
   |
   V
-setimmediate callbacks
+(set immediate callbacks) - process callbacks immediately after the IO polling and execution phase - more important in more advanced use cases *
   |
   |
   V
-close callbacks
+(close callbacks) - all close events are processed, ex. web socket shuts down **
 
 finishes one tic of the event loop - one cycle in the loop 
 next determine if the event loop should continue with another tic or stop 
