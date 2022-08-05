@@ -107,3 +107,8 @@ share file (NO node module folder)
 if you're sharing your code, always include the package.json and 
 package-lock.json file because these 2 files are necessary for the 
 other dev to reconstruct the modules folder
+
+TODO extension
+todo + :
+fixme + :
+TODO: FIXME: 
