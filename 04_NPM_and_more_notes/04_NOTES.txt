@@ -232,3 +232,10 @@ node also relies on things like http-parser {http requests}, c-ares {DNS request
 
 node is single threaded
 node offloads expensive tasks to the thread pool to keep the event loop functional
+
+event loop : all the application code that is inside callback functions (non-top-level code)
+node.js is built around callback functions - functions that are called as soon as some task is finished
+
+node has an event-driven architecture
+event-driven architecture: events are emitted > event loops pick them up > callbacks are called
+ex. new http request > event ---> callback
