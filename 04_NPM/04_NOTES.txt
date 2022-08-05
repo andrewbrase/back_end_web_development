@@ -66,6 +66,7 @@ node_modules/slugify/package.json
   etc.
   etc.
 
+-> then you need to require the 3rd party module w/ const slugify = require('slugify');
   ----------------------------------------------------------------------
 
 - development dependencies - tools for development like a code bundler or debugger tool 
