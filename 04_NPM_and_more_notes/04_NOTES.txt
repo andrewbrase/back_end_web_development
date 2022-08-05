@@ -271,3 +271,14 @@ similar but (set immediate only runs after the IO callback)
 finishes one tic of the event loop - one cycle in the loop 
 next determine if the event loop should continue with another tic or stop 
 node checks : Any pending timers or I/O tasks? ---> continue loop if yes
+
+!!! the event loop makes asynchronous programming possible in node.js
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* Dont use the sync versions of functions in fs,crypto and zlib modules in your callback functions
+* Don't perform complex calculations (ex. loops inside of loops)
+* Be careful with JSON in large objects
+* Don't use too complex regular expressions (ex. nested quantifiers)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+----------------------------------------------------------------------
