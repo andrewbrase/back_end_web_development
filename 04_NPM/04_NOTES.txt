@@ -112,3 +112,28 @@ TODO extension
 todo + :
 fixme + :
 TODO: FIXME: 
+
+----------------------------------------------------------------------
+HTTP request
+
+start line contains the http method that is used in the request, 
+the request target & the HTTP version -
+Start line : HTTP method + request target + HTTP version
+*** GET /maps HTTP/1.1 ***
+the request target is targeting the maps resource in this example
+the websites root would be just a /
+
+~~~
+GET : requests data
+POST : sending data
+PUT & PATCH : modify data
+~~~
+
+The next part of the request are the request headers - some info that we send about the request itself
+info includes : which browser making request, what time, users language etc.
+Host : www.google.com
+User-Agent: Mozilla/5.0
+Accept_Language: en-US
+
+Contains data for ex. from an html form 
+<BODY>
