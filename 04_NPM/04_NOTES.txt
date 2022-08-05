@@ -119,6 +119,9 @@ HTTP request
 start line contains the http method that is used in the request, 
 the request target & the HTTP version -
 Start line : HTTP method + request target + HTTP version
+
+REQUEST from client------------->
+
 *** GET /maps HTTP/1.1 ***
 the request target is targeting the maps resource in this example
 the websites root would be just a /
@@ -139,3 +142,19 @@ Contains data for ex. from an html form
 <BODY>
 
 there is https - more secure - uses tls encryption 
+----------------------------------------------------------------------
+<-------------RESPONSE from server
+
+Start line : HTTP version + status code + status message
+HTTP/1.1 200 OK
+
+ex. status code {404 not found}
+
+Date: Fri, 18 Jan 2022
+Content-Type: text/html        ---> info about response itself 
+Transfer-Encoding: chunked     (we can make up our own headers - back end)
+
+the developer specifically sends back the body and the response
+we already have done this with res.end() (response.end)
+<BODY>
+ex. contains html of website or JSON data from an api
