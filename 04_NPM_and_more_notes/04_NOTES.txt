@@ -239,3 +239,27 @@ node.js is built around callback functions - functions that are called as soon a
 node has an event-driven architecture
 event-driven architecture: events are emitted > event loops pick them up > callbacks are called
 ex. new http request > event ---> callback
+
+The event Loop:
+
+Start
+  |
+  |
+  V
+Expired timer callbacks
+  |
+  |
+  V
+I/O (input/output) polling and callbacks
+  |
+  |
+  V
+setimmediate callbacks
+  |
+  |
+  V
+close callbacks
+
+finishes one tic of the event loop - one cycle in the loop 
+next determine if the event loop should continue with another tic or stop 
+node checks : Any pending timers or I/O tasks? ---> continue loop if yes
