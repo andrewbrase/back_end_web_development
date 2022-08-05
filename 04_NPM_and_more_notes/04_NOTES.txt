@@ -265,6 +265,8 @@ the callback queue, (networking and file access) ex. fs.readFile() ****
 (close callbacks) - all close events are processed, ex. web socket shuts down **
 
 (Next tic que and microtask que(resolve promises) any callbacks happen for these, they will be processed immediately instead of having to loop back)
+Process.Nexttick() is a function can be used if we need to execute a certain callback right after the current event
+similar but (set immediate only runs after the IO callback)
 
 finishes one tic of the event loop - one cycle in the loop 
 next determine if the event loop should continue with another tic or stop 
