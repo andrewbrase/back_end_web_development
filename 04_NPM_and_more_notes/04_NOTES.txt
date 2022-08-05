@@ -274,11 +274,14 @@ node checks : Any pending timers or I/O tasks? ---> continue loop if yes
 
 !!! the event loop makes asynchronous programming possible in node.js
 
+DONT BLOCK
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 * Dont use the sync versions of functions in fs,crypto and zlib modules in your callback functions
 * Don't perform complex calculations (ex. loops inside of loops)
-* Be careful with JSON in large objects
+* Be careful with JSON in large objects - it can take a long time to parse/ stringify data
 * Don't use too complex regular expressions (ex. nested quantifiers)
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+the sync version can be used in top level code, outside of any callbacks before the loop starts 
+you can offload to the thread pool or child processes
 
 ----------------------------------------------------------------------
