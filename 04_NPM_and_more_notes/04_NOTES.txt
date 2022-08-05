@@ -161,3 +161,11 @@ ex. contains html of website or JSON data from an api something like that
 
 once the html is sent, it is scanned on client side to see what css, or JS it needs
 more requests will be sent to the server for this info
+---
+TCP
+job of tcp is to break up the requests and responses into chunks 
+called packets before they are sent and then once they arrive at 
+their destination they are reassembled
+
+IP
+job of ip protocol is to route the packets through the internet 
