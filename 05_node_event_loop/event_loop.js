@@ -46,6 +46,8 @@ timer 2 finished          is because the event loop waits for things to happen i
                           the phase where io callbacks are handled
 timer 3 finished
 
+*** even though the timer callbacks is first on the diagram,
+the I/O finished in the example, next up is the setimmediate callbacks
 
 START     <----------------------------------------------
 |                                                        |
