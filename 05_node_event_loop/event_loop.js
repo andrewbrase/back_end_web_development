@@ -156,9 +156,15 @@ hello from the top level code
 timer 1 finished
 immediate 1 finished
 I/O finished
+1748 Sync Password encrypted
 process.nextTick
 immediate 2 finished
 timer 2 finished
+timer 3 finished
+5328 password 3 encrypted
+5388 password 2 encrypted
+5432 password 1 encrypted
+5447 password 3 encrypted
 
 // there are 4 thread pools, if you had 4 passwords to encrypt they'd
 all be done at the same time
@@ -169,7 +175,4 @@ to be encrypted, since the thread pool is only 1
 // if we take an asynchronous crypto .pbkdf2 and make it synchronous,
 the rest of the program must wait until it is completed, blocking the event loop
 
-// it took 1034 milliseconds to encrypt
-1034 password encrypted
-timer 3 finished
 */
