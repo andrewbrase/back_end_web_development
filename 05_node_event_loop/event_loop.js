@@ -39,7 +39,36 @@ hello from the top level code
 timer 1 finished
 immediate 1 finished
 I/O finished
-immediate 2 finished
-timer 2 finished
+
+---RUNNING IN EVENT LOOP---
+immediate 2 finished    - the reason that the timer 2 didnt finish until after the setimmediate
+timer 2 finished          is because the event loop waits for things to happen in the poll phase - 
+                          the phase where io callbacks are handled
 timer 3 finished
+
+
+START     <----------------------------------------------
+|                                                        |
+|                                                        |
+v                                                        |
+Expired timer callbacks                                  |
+|                                                        |
+|                                                        |
+v                                                        |
+I/O polling and callbacks                                |
+|                                                        |
+|                                                        |
+v                                                        |
+setimmediate callbacks                                   |
+|                                                        |
+|                                                        |
+v                                                        |
+close callbacks                                          |
+|                                                        |
+|                                                        |
+v                                                        |
+Any pending timers or I/O tasks? --> no (exit program)   |
+|                                                        |
+L________________________________________________________|  yes
+
 */
