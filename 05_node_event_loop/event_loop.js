@@ -115,6 +115,7 @@ const fs = require('fs');
 const crypto = require('crypto');
 
 const start_time = Date.now();
+process.env.UV_THREADPOOL_SIZE = 2;
 
 setTimeout(() => console.log('timer 1 finished'), 0 );
 setImmediate(() => console.log('immediate 1 finished'));
@@ -128,8 +129,22 @@ fs.readFile("event_text.txt", () => {
 
     process.nextTick(() => console.log('process.nextTick'));
 
+    //
+    crypto.pbkdf2Sync('Password','Salt',100000,1024,'sha512');
+    console.log(Date.now - start_time, "Sync Password encrypted");
+    //
+
     crypto.pbkdf2('password','salt1234',100000, 1024, 'sha512', () => {
-        console.log(Date.now() - start_time , 'password encrypted');
+        console.log(Date.now() - start_time , 'password 1 encrypted');
+    });
+    crypto.pbkdf2('password','salt1234',100000, 1024, 'sha512', () => {
+        console.log(Date.now() - start_time , 'password 2 encrypted');
+    });
+    crypto.pbkdf2('password','salt1234',100000, 1024, 'sha512', () => {
+        console.log(Date.now() - start_time , 'password 3 encrypted');
+    });
+    crypto.pbkdf2('password','salt1234',100000, 1024, 'sha512', () => {
+        console.log(Date.now() - start_time , 'password 3 encrypted');
     });
 });
 
@@ -150,6 +165,9 @@ all be done at the same time
 , you can actually change the thread pool size by using - process.env.UV_THREADPOOL_SIZE = 1;
 // if you ran the 4 password encryptions, theyd have to wait for the previous password
 to be encrypted, since the thread pool is only 1
+
+// if we take an asynchronous crypto .pbkdf2 and make it synchronous,
+the rest of the program must wait until it is completed, blocking the event loop
 
 // it took 1034 milliseconds to encrypt
 1034 password encrypted
