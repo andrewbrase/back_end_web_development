@@ -171,6 +171,8 @@ all be done at the same time
 , you can actually change the thread pool size by using - process.env.UV_THREADPOOL_SIZE = 1;
 // if you ran the 4 password encryptions, theyd have to wait for the previous password
 to be encrypted, since the thread pool is only 1
+synchronous operations are not in the event loop or thread pool, blocking execution
+and slowing everything down
 
 // if we take an asynchronous crypto .pbkdf2 and make it synchronous,
 the rest of the program must wait until it is completed, blocking the event loop
