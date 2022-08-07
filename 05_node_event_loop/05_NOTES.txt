@@ -1,0 +1,33 @@
+The event-driven architecture of Node.js
+In node there are certain objects called event emitters
+that emit named events as soon as something happens in the app
+ex. a request in the server or a timer expiring or a file finishing to read
+
+these events can then be picked up by Event Listeners that we developers set up
+to fire off callback functions that are attached to each listener 
+
+|----------OBSERVER PATTERN-----------| - there is an observer that waits to emit the event the listener is waiting for - react rather than call
+Event emitter -----> Event Listener -----> Attached callback function 
+            emits events            calls
+
+~~~~~~~~~
+when we want to create a server we use the createServer() method
+
+const server = http.createServer();
+server.on('request', (req,res) => {
+    console.log('Request recieved');
+    res.end('Request recieved');
+});
+~~~~~~~~~
+
+this is slightly different than how we set up our previous project but the
+server.on is an Event Listener and in this case for the request event 
+
+Emitter                                 (SERVER ON will be called)
+---------------                         const server = http.createServer();
+New request      'request event         server.on('request', (req,res) => {
+on server          ---------------->        console.log('Request recieved');
+127.0.0.1:8000                              res.end('Request recieved');
+                                        });
+
+behind the scenes the server is actually an instance of the node.js event emitter class 
