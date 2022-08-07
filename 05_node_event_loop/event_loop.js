@@ -17,7 +17,7 @@ timer 1 finished
 immediate 1 finished
 I/O finished
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const fs = require('fs');
 
 setTimeout(() => console.log('timer 1 finished'), 0 );
@@ -34,7 +34,7 @@ fs.readFile("event_text.txt", () => {
 
 console.log('hello from the top level code');
 
-/* --->
+--->
 hello from the top level code
 timer 1 finished
 immediate 1 finished
@@ -73,4 +73,35 @@ Any pending timers or I/O tasks? --> no (exit program)   |
 |                                                        |
 L________________________________________________________|  yes
 
+*/
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+const fs = require('fs');
+
+setTimeout(() => console.log('timer 1 finished'), 0 );
+setImmediate(() => console.log('immediate 1 finished'));
+
+fs.readFile("event_text.txt", () => {
+    console.log('I/O finished');
+
+    setTimeout(() => console.log('timer 2 finished'), 0 );
+    setTimeout(() => console.log('timer 3 finished'), 3000 );
+    setImmediate(() => console.log('immediate 2 finished'));
+
+    process.nextTick(() => console.log('process.nextTick'))
+});
+
+console.log('hello from the top level code');
+
+/*
+--->
+hello from the top level code
+timer 1 finished
+immediate 1 finished
+I/O finished
+
+process.nextTick (part of the microtasks que which gets executed 
+        after EVERY phase, not just after every full around tick)
+immediate 2 finished
+timer 2 finished
+timer 3 finished
 */
