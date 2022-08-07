@@ -130,8 +130,8 @@ fs.readFile("event_text.txt", () => {
     process.nextTick(() => console.log('process.nextTick'));
 
     //
-    crypto.pbkdf2Sync('Password','Salt',100000,1024,'sha512');
-    console.log(Date.now - start_time, "Sync Password encrypted");
+    crypto.pbkdf2Sync('Password','salt',100000,1024,'sha512');
+    console.log(Date.now() - start_time, "Sync Password encrypted");
     //
 
     crypto.pbkdf2('password','salt1234',100000, 1024, 'sha512', () => {
