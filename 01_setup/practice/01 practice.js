@@ -334,3 +334,35 @@ function betterThanAverage(classPoints, yourPoints) {
   }
 
   repeatStr(num,str)
+
+// ----------------------------------------------
+// ----------------------------------------------
+newArr = [100,89,66,90,78,99,56,100,100];
+
+  function find_average(array){
+    sum = 0;
+    count = 0;
+    for (var item of array){
+        sum += item;
+        count ++;
+    }
+    if (array.length > 0){
+        return sum/count;
+    } else {
+        return 0;
+    }
+  }
+
+find_average(newArr);
+// ----------------------------------------------
+// fix this
+myArrtwo = [1,2,3,4,5];
+
+function invert(array) {
+    for (item in array){
+     item = -Math.abs(item);
+    }
+    return array;
+  }
+
+  invert(myArrtwo)
