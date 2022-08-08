@@ -355,19 +355,7 @@ newArr = [100,89,66,90,78,99,56,100,100];
 
 find_average(newArr);
 // ----------------------------------------------
-// fix this
-myArrtwo = [1,2,3,4,5];
-
-function invert(array) {
-    for (item in array){
-     item = -Math.abs(item);
-    }
-    return array;
-  }
-
-  invert(myArrtwo)
-
-  //
+//
   function invert(array) {
     return array.map( x => x === 0 ? x : -x);
  }
@@ -384,4 +372,5 @@ function invert(array) {
       newArr.push(-array[i]);
     }
      return newArr;
-  }
+ }
+// ----------------------------------------------
