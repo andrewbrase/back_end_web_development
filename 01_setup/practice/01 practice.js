@@ -374,3 +374,30 @@ find_average(newArr);
      return newArr;
  }
 // ----------------------------------------------
+
+newmapArr = [1,2,3,4,5];
+
+function mapFunction(array_item){
+    console.log(array_item);
+}
+
+function map(mapFunction,newmapArr){
+    result = [];
+    for (let i = 0; i < newmapArr.length; i++){
+        result[i] = mapFunction(newmapArr[i]);
+    }
+}
+// ~~~
+
+const nums = [0,1,2,3,4,5];
+
+const cubeFunc = function(x){
+    return x * x * x;
+}
+
+function map(cubeFunc,nums){
+    newres = [];
+    for (i = 0; i < nums.length; i++){
+        newres[i] = cubeFunc()///////////
+    }
+}
