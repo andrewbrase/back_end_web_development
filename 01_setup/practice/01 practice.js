@@ -404,3 +404,36 @@
 //   const cube = map(f, numbers);
 //   console.log(cube);
 
+// Looping Arrays, Breaking and Continuing
+
+const arr = [
+    'andrew',
+    'brase',
+    2022 - 2000,
+    'web developer',
+    ['steve','bob','dan']
+];
+
+for (let i = 0; i < arr.length; i++){
+    console.log(arr[i]);
+}
+
+// --->
+// andrew
+// brase
+// 22
+// web developer
+// (3) ['steve', 'bob', 'dan']
+
+const str = 'hello';
+
+for (let i = 0; i < str.length; i++){
+    console.log(str[i]);
+}
+
+// --->
+// h
+// e
+// l
+// l
+// o
