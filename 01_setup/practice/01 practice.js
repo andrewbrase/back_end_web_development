@@ -485,3 +485,17 @@ var min = function(list){
   function makeUpperCase(str) {
     return str.toUpperCase();
   }
+
+  function fakeBin(x){
+    var nums = x.split('');
+  
+      for (let i = 0; i < nums.length ; i++){
+         nums[i] = parseInt(nums[i]);
+          if (nums[i] < 5){
+            nums[i] = 0;
+          } else {
+            nums[i] = 1;
+          }
+      }
+    return String(nums.join(''))
+  }
