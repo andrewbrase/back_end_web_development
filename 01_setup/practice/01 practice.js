@@ -460,3 +460,7 @@ while (num < 11){
 function smash (words) {
     return words.join(' ');
   };
+
+function filter_list(l) {
+return l.filter(l => typeof(l)==='number');
+}
