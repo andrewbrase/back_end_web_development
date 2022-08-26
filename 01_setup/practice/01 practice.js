@@ -437,3 +437,22 @@ for (let i = 0; i < str.length; i++){
 // l
 // l
 // o
+
+let num = 1;
+
+while (num < 11){
+    console.log(num);
+    num++
+}
+
+// --->
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+// 10
