@@ -310,7 +310,7 @@
 //       classAv += number
 //     }
 //     var classAv = classAv / len
-    
+
 //     if (classAv < yourPoints){
 //       return true;
 //     }else{
@@ -395,11 +395,11 @@
 //     }
 //     return result;
 //   }
-  
+
 //   const f = function (x) {
 //     return x * x * x;
 //   }
-  
+
 //   const numbers = [0, 1, 2, 5, 10];
 //   const cube = map(f, numbers);
 //   console.log(cube);
@@ -411,10 +411,10 @@ const arr = [
     'brase',
     2022 - 2000,
     'web developer',
-    ['steve','bob','dan']
+    ['steve', 'bob', 'dan']
 ];
 
-for (let i = 0; i < arr.length; i++){
+for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
 }
 
@@ -427,7 +427,7 @@ for (let i = 0; i < arr.length; i++){
 
 const str = 'hello';
 
-for (let i = 0; i < str.length; i++){
+for (let i = 0; i < str.length; i++) {
     console.log(str[i]);
 }
 
@@ -440,7 +440,7 @@ for (let i = 0; i < str.length; i++){
 
 let num = 1;
 
-while (num < 11){
+while (num < 11) {
     console.log(num);
     num++
 }
@@ -457,45 +457,45 @@ while (num < 11){
 // 9
 // 10
 
-function smash (words) {
+function smash(words) {
     return words.join(' ');
-  };
+};
 
 function filter_list(l) {
-return l.filter(l => typeof(l)==='number');
+    return l.filter(l => typeof (l) === 'number');
 }
 
-function squareDigits(num){
-    var array = num.toString().split('').map( function(int) {
-      var i = parseInt(int);
-      return i * i;
+function squareDigits(num) {
+    var array = num.toString().split('').map(function (int) {
+        var i = parseInt(int);
+        return i * i;
     });
-    
+
     return parseInt(array.join(""));
 }
 
-var min = function(list){
+var min = function (list) {
     return Math.min(...list);
-  }
-  
-  var max = function(list){
+}
+
+var max = function (list) {
     return Math.max(...list);
-  }
+}
 
-  function makeUpperCase(str) {
+function makeUpperCase(str) {
     return str.toUpperCase();
-  }
+}
 
-  function fakeBin(x){
+function fakeBin(x) {
     var nums = x.split('');
-  
-      for (let i = 0; i < nums.length ; i++){
-         nums[i] = parseInt(nums[i]);
-          if (nums[i] < 5){
+
+    for (let i = 0; i < nums.length; i++) {
+        nums[i] = parseInt(nums[i]);
+        if (nums[i] < 5) {
             nums[i] = 0;
-          } else {
+        } else {
             nums[i] = 1;
-          }
-      }
+        }
+    }
     return String(nums.join(''))
-  }
+}
