@@ -481,3 +481,7 @@ var min = function(list){
   var max = function(list){
     return Math.max(...list);
   }
+
+  function makeUpperCase(str) {
+    return str.toUpperCase();
+  }
