@@ -456,3 +456,7 @@ while (num < 11){
 // 8
 // 9
 // 10
+
+function smash (words) {
+    return words.join(' ');
+  };
