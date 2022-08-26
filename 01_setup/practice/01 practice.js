@@ -464,3 +464,12 @@ function smash (words) {
 function filter_list(l) {
 return l.filter(l => typeof(l)==='number');
 }
+
+function squareDigits(num){
+    var array = num.toString().split('').map( function(int) {
+      var i = parseInt(int);
+      return i * i;
+    });
+    
+    return parseInt(array.join(""));
+  }
